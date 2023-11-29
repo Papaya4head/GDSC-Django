@@ -20,15 +20,11 @@ def ser(word,words):
         print(f"this word {word} appears {freq} times")
     else:
         print(f'this {word} dose not exist')
-def display_word_frequencies(word_frequencies, descending=True, top_n=None):
+def display_word_frequencies(word_frequencies, top_n=None):
     """Displays the word frequencies in descending order. Optionally, only displays the top N most frequent words."""
-    if descending:
-        sorted_word_frequencies = sorted(word_frequencies.items(), key=lambda item: item[1], reverse=True)
-    else:
-        sorted_word_frequencies = sorted(word_frequencies.items(), key=lambda item: item[1])
+    sorted_word_frequencies = sorted(word_frequencies.items(), key=lambda item: item[1], reverse=True)
 
-    if top_n:
-        sorted_word_frequencies = sorted_word_frequencies[:top_n]
+    sorted_word_frequencies = sorted_word_frequencies[:top_n]
 
     for word, frequency in sorted_word_frequencies:
         print(f"{word}: {frequency}")
@@ -42,5 +38,6 @@ display(freq)
 search_word = input("\nEnter a word to search for: ")
 ser(search_word,Words)
 
-print("\nDisplaying the top 5 most frequent words:")
-display_word_frequencies(freq, top_n=5)
+N=int(input("enter the number of most used words you want: "))
+print("\nDisplaying the top  most frequent words:")
+display_word_frequencies(freq, top_n=N)
