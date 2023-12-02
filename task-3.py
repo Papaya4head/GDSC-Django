@@ -16,6 +16,15 @@ print()
 #this prints the word num infront of every number and 0 infront of any numberless than 10 or 2 caracters
 for i in range(100):
     prifix= "num: " if  i<100 else""    
-    print(f"{prifix}{i}, " , end="")
+    print(f"{prifix}{i}
+    , " , end="")
 print()
 #prints just word num infront of every number
+for i in range(100):
+    if i < 99:
+        print(f"{i:02d}, ", end="")
+    else:
+        print(f"{i:02d}")
+
+#to remove the comma after the last number last number 
+#this is the final code
